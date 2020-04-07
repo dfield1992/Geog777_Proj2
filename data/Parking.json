@@ -1,0 +1,12 @@
+{"type":"FeatureCollection", "features": [
+{"type":"Feature","geometry":{"type":"Point","coordinates":[468585.8744682913,701874.8625092638]},"properties":{"Id":0,"Name":"Entrance Parking"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[468918.3371647373,702852.4471070593]},"properties":{"Id":0,"Name":"North Lot Parking"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[469993.88703350764,702563.1645078923]},"properties":{"Id":0,"Name":"East Lot Parking"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[468331.4460378059,705347.8683860197]},"properties":{"Id":0,"Name":"Town Parking"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[468867.1178940918,701801.1471013726]},"properties":{"Id":0,"Name":"Point Parking"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[468780.90024378954,702790.0794122793]},"properties":{"Id":0,"Name":"Recreational Parking"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[468605.61643209145,702887.6473183098]},"properties":{"Id":0,"Name":"Parking Lot 1"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[468566.9714762692,702746.6212331498]},"properties":{"Id":0,"Name":"Parking Lot 2"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[468563.49903096346,702670.115422058]},"properties":{"Id":0,"Name":"Parking Lot 3"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[468476.7232241024,702642.4864781155]},"properties":{"Id":0,"Name":"Parking Lot 4"}}
+]}

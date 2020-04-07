@@ -1,0 +1,4 @@
+{"type":"FeatureCollection", "features": [
+{"type":"Feature","geometry":{"type":"Point","coordinates":[468551.33092480066,702748.0674836637]},"properties":{"Id":0,"Name":"Man Restroom","Shower":"YES"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[468952.665093148,702930.1129528397]},"properties":{"Id":0,"Name":"Bay View Restrrom","Shower":"NO"}}
+]}

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>Big Bay State Park  | Application</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+        
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css" />    
+    
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700|Open+Sans:300,400,600" rel="stylesheet">
+    
+    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"></script>
+    
+    <!-- Include CARTO.js -->
+    <script src="https://libs.cartocdn.com/carto.js/v4.2.0/carto.min.js"></script>
+    <link href="https://carto.com/developers/carto-js/examples/maps/public/style.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"/>
+    <!-- Load Leaflet CSS -->
+    <link href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" rel="stylesheet">
+    <link href="lib/leaflet-locatecontrol/L.Control.Locate.min.css" rel="stylesheet">
+    <link href="lib/leaflet-search/leaflet-search.css" rel = "stylesheet">
+   
+    <!-- Load our styles -->
+    <link rel = "stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="lib/leaflet-sidebar.min.css" />
+    <link href="https://carto.com/developers/carto-js/examples/maps/public/style.css" rel="stylesheet">
+    <!-- Load Leaflet and Carto libraries -->
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://libs.cartocdn.com/carto.js/v4.2.0/carto.min.js"></script>
+    
+    <!-- Include JQUERY.js -->
+    <script
+        type="text/javascript"
+        src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous">
+    </script> 
+        
+    </head>
+    
+    <body>
+        <header>
+            <div class = "container">
+                <intro class="logo"> Big Bay State Park </intro> 
+            </div>
+        </header>
+    <div id="searchbox">
+            <select id="selectDrop">
+                <option selected value="">Choose Map Extent</option>
+            </select>
+    </div>
+        
+    <div id="sidebar" class="sidebar collapsed">
+        <!-- Nav tabs -->
+        <div class="sidebar-tabs">
+            <ul role="tablist">
+                <li><a href="#home" role="tab"><i class="fa fa-bars"></i></a></li>
+                <li><a href="#profile" role="tab"><i class="fa fa-edit"></i></a></li>
+                <li class="messages"><a href="#messages" role="tab"><i class="fa fa-search"></i></a></li>
+
+            </ul>
+
+        </div>
+
+        <!-- Tab panes -->
+        <div class="sidebar-content">
+            <div class="sidebar-pane" id="home">
+                <h1 class="sidebar-header">
+                     Park Information  
+                    <span class="sidebar-close"><i class="fa fa-caret-left"></i></span>
+                </h1>
+                    <br>
+                    <img src = "lib/Images/big_bay.jpg" width=360 height=260 style="margin: 0px 5px">
+                    <h2>Located on Madeline Island in Northern Wisconsin. Big Bay State Park has a 1.5-mile beach, a familiy campground and outdoor group camp, picnic areas, a 1.3 mile boardwalk and more than 7 miles of hiking and nature trails with incredible views of Lake Superior.</h2>
+                    <h2> The park is open year-round from 6:00am to 11:00pm. To access the park you must ride the Madeline Island Ferry Boat. The boat operates on regular schedules between Bayfield and La Pointe from April to December. </h2>
+                    <h2> Kayak along Wisconsin's only state park on beautiful Lake Superior, with some freshwater sea caves to the west and one of the Midwest's oceans to the east. You can bring your own kayak or rent one at Barrier Beach. </h2>              
+                    <h2>Paddle around the sandstone cliffs through sea caves and turquoise waters.  Click here to watch the adventures of kayaking at Big Bay State Park:  <a href="https://www.youtube.com/watch?v=9TVuF_tZzyw&index=2&list=PLz1F3wus1j4xJohkyDNe86Te5_Cg2rHl5"> Kayaking Video.</a></h2>
+                    
+                   
+            </div>
+
+            <div class="sidebar-pane" id="profile">
+                <h1 class="sidebar-header">Write a Review<span class="sidebar-close"><i class="fa fa-caret-left"></i></span></h1><br>
+                
+                    <label for="fname" style="width: 100%; padding: 10px; box-sizing: border-box; margin-top: 3px; margin-bottom: 2px;  resize: vertical">First Name:</label>
+                    <input type="text" id="fname" name="fname" placeholder="Enter Your First Name..." style="width: 100%; padding: 10px; border: 1px solid #ccc;  border-radius: 4px; box-sizing: border-box; margin-top: 3px; margin-bottom: 2px;  resize: vertical">
+                     
+                    <label for="lname" style="width: 100%; padding: 10px; box-sizing: border-box; margin-top: 3px; margin-bottom: 10px;  resize: vertical">Last Name:</label>
+                    <input type="text" id="lname" name="lname" placeholder="Enter Your Last Name..." style="width: 100%; padding: 10px; border: 1px solid #ccc;  border-radius: 4px; box-sizing: border-box; margin-top: 3px; margin-bottom: 2px;  resize: vertical">
+                     
+                     <label for="date" style="width: 100%; padding: 10px; box-sizing: border-box; margin-top: 3px; margin-bottom: 10px;  resize: vertical">Date:</label>
+                    <input type="text" id="date" name="date" placeholder="YYYY-MM-DD" style="width: 100%; padding: 10px; border: 1px solid #ccc;  border-radius: 4px; box-sizing: border-box; margin-top: 3px; margin-bottom: 2px;  resize: vertical">
+
+                    <label for="comment" style="width: 100%; padding: 10px; box-sizing: border-box; margin-top: 3px; margin-bottom: 10px;  resize: vertical">Comment:</label>
+                    <textarea id="comment" name="comment" placeholder="Submit your comment here..." style="width: 100%; padding: 10px; border: 1px solid #ccc;  border-radius: 4px; box-sizing: border-box; margin-top: 3px; margin-bottom: 2px;  resize: vertical; height:100px"></textarea>
+
+                    <label for="lat" style="width: 100%; padding: 10px; box-sizing: border-box; margin-top: 3px; margin-bottom: 10px;  resize: vertical">Latitude:</label>
+                    <input type="text" id="lat" name="lat" placeholder="Latitude..." style="width: 90%; padding: 10px; border: 1px solid #ccc;  border-radius: 4px; box-sizing: border-box; margin-top: 3px; margin-bottom: 2px;  resize: vertical">
+
+                    <label for="long" style="width: 100%; padding: 10px; box-sizing: border-box; margin-top: 3px; margin-bottom: 10px;  resize: vertical">Longitude:</label>
+                    <input type="text" id="lng" name="lng" placeholder="Longitude..." style="width: 90%; padding: 10px; border: 1px solid #ccc;  border-radius: 4px; box-sizing: border-box; margin-top: 3px; margin-bottom: 10px;  resize: vertical">
+                    
+                    
+				    <button id="locate" onClick="currentLocation()"> Use current location </button>
+				    <button id="locate" onClick="findLocation()"> Find location on Map </button><p></p>
+                    <input type="submit" value="Submit" onClick="setData()" style="background-color: #6c9677; color: white; padding: 12px 20px; border: none; border-radius: 4px;">
+            </div>
+
+            <div class="sidebar-pane" id="messages">
+                
+                    <h1 class="sidebar-header">Find Features Near Me<span class="sidebar-close"><i class="fa fa-caret-left"></i></span></h1> <br>
+                    <h2>You can use this tool to find all of the park features near you. To use this tool you can either use your current location or by clicking select location on map. You will then enter a search distance to find all of the park features near you.</h2>
+           
+
+                    <br>
+                    <label for="radius_input" style="width: 100%; padding: 10px; box-sizing: border-box; margin-top: 3px; margin-bottom: 10px;  resize: vertical">Enter distance to search for features (in miles):</label>
+                    <input type="number" id="radius_input" name="radius_input" placeholder="Radius search..." style="width: 100%; padding: 10px; border: 1px solid #ccc;  border-radius: 4px; box-sizing: border-box; margin-top: 3px; margin-bottom: 10px;  resize: vertical">
+                    <label for="lat" style="width: 100%; padding: 10px; box-sizing: border-box; margin-top: 3px; margin-bottom: 10px;  resize: vertical">Latitude:</label>
+                    <input type="text" id="rlat" name="rlat" placeholder="Latitude..." style="width: 100%; padding: 10px; border: 1px solid #ccc;  border-radius: 4px; box-sizing: border-box; margin-top: 3px; margin-bottom: 10px;  resize: vertical">
+
+                    <label for="long" style="width: 100%; padding: 10px; box-sizing: border-box; margin-top: 3px; margin-bottom: 10px;  resize: vertical">Longitude:</label>
+                    <input type="text" id="rlng" name="rlng" placeholder="Longitude..." style="width: 100%; padding: 10px; border: 1px solid #ccc;  border-radius: 4px; box-sizing: border-box; margin-top: 3px; margin-bottom: 10px;  resize: vertical">
+
+                    <button id="locate" onClick="getUserRadiusLocation()"> Use my location </button>
+                    <button id="locate" onClick="radiusLocation()"> Select Location on Map </button><p></p>
+                    <input type="submit" value="Search" onClick="radiusSearch()" style="background-color: #6c9677; color: white; padding: 12px 20px; border: none; border-radius: 4px;">
+            
+             </div>
+            
+        </div>
+        
+    </div>
+       
+        <div id="layer-panel">
+            
+            <br>
+            <h3>Legend </h3>
+            <br><br>
+            
+        
+                <ul>     
+                    <h4>Madeline Island</h4>
+                    
+                        <input type="checkbox" class="checkboxes" id="airport" onClick="toggleLayer(airportLayer,'airport')" checked/>
+                        <img src = "lib/Images/plane.png" padx=5px width=15 height=15 style="airportStyle">
+                        <label>Airport</label><h4></h4>
+                    
+                        <input type="checkbox" class="checkboxes" id="ferry" onClick="toggleLayer(ferryLayer,'ferry')" checked/>
+                        <img src="lib/Images/ferry.png" width=12 height=12 style="margin: 0px 5px">
+                        <label>Ferry</label><h4></h4>
+                    
+                    
+                        <input type="checkbox" class="checkboxes" id="ferryroute" onClick="toggleLayer(ferryrouteLayer, 'ferryroute')" checked/>
+                        <span style="opacity:1; border-bottom:4px dashed #2391ff; background:#FFF; height:1px; width:22px; display:inline-block"></span> 
+                        <label>Ferry Route</label><h4></h4>
+                    
+            
+                <h4>Big Bay State Park</h4>
+                    
+                        <input type="checkbox" class="checkboxes" id="beach" onClick="toggleLayer(beachLayer, 'beach')" checked/>
+                        <img src="lib/Images/beach.png" width=15 height=15 style="margin:0px 5px"> 
+                        <label>Beach</label><h4></h4>
+                    
+                        <input type="checkbox" class="checkboxes" id="camp" onClick="toggleLayer(campLayer,'camp')" checked/>
+                        <img src="lib/Images/camp.png" width=15 height=15 style="margin:0px 5px">
+                        <label>Campgrounds</label><h4></h4>
+                  
+                        <input type="checkbox" class="checkboxes" id="kayak" onClick="toggleLayer(kayakLayer,'kayak')" checked/>
+                        <img src="lib/Images/kayak.png" padx=5px width=15 height=15 style="margin:0px 5px"> 
+                        <label>Kayak Rentals</label><h4></h4>
+                   
+                        <input type="checkbox" class="checkboxes" id="parking" onClick="toggleLayer(parkingLayer, 'parking')" checked/>
+                        <img src="https://s3.amazonaws.com/com.cartodb.users-assets.production/maki-icons/parking-18.svg" padx=5px width=16 height=16 style="margin:0px 5px"> 
+                        <label>Parking</label><h4></h4>
+                    
+                    
+                        <input type="checkbox" class="checkboxes" id="entrance" onClick="toggleLayer(EntranceLayer,'entrance')" checked/>
+                        <img src="lib/Images/entrance.png" padx=5px width=16 height=16 style="margin:0px 5px"> 
+                        <label>Park Entrance</label><h4></h4>
+                   
+                        <input type="checkbox" class="checkboxes" id="review" onClick="toggleLayer(reviewLayer,'review')" checked/>
+                        <img src="lib/Images/park.png" padx=5px width=16 height=16 style="margin:0px 5px"> 
+                        <label>Park Reviews</label><h4></h4>
+                    
+                        <input type="checkbox" class="checkboxes" id="picnic" onClick="toggleLayer(picnicLayer, 'picnic')" checked/>
+                        <img src="lib/Images/picnic.png" padx=5px width=16 height=16 style="margin:0px 5px">
+                        <label>Picnic Area</label><h4></h4>
+                    
+                        <input type="checkbox" class="checkboxes" id="restrooms" onClick="toggleLayer(restroomLayer, 'restrooms')" checked/>
+                        <img src="lib/Images/restrooms.png" padx=5px width=16 height=16 style="margin:0px 5px"> 
+                        <label>Restrooms</label><h4></h4>
+                    
+                    
+                        <input type="checkbox" class="checkboxes" id="trails" onClick="toggleLayer(trailLayer, 'trails')" checked/>
+                         <span style="opacity:1; border-bottom:4px dashed #575454; background:#FFF; height:1px; width:23px; display:inline-block"></span> 
+                        <label>Trails</label><h4></h4>
+                    
+                    
+                        <h4>Base Maps</h4>
+                    
+                        <input type="radio" class="radio" name="rBase" id="streets" onclick="toggleBase()" checked> <label>Default</label><h4></h4>
+                        
+                        <input type="radio" class="radio" name="rBase" id="outdoors" onclick="toggleBase()"> <label>Outdoors </label>
+                                
+                            
+                </ul>
+        </div>  
+        
+ <div id="map" class="sidebar-map"></div>
+
+
+
+    <script src="https://unpkg.com/leaflet@1.0.1/dist/leaflet.js"></script>
+    <script src="lib/leaflet-sidebar.js"></script>
+    <script src = "lib/leaflet.zoomhome.js"></script>  
+    <script src="js/main.js"></script>
+    <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+    </body>
+</html>
+
+ 
